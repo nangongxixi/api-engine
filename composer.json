@@ -1,0 +1,36 @@
+{
+  "name": "scalpel/api-engin",
+  "description": "A simple http api server base on php-fpm",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Scalpel",
+      "email": "373966902@qq.com"
+    }
+  ],
+
+  "minimum-stability": "dev",
+
+  "autoload": {
+    "psr-4": {
+      "j\\apiSimple\\": "src"
+    }
+  },
+
+  "require": {
+    "php": ">=5.4.0",
+    "scalpel/core": "*"
+  },
+
+  "repositories": [   
+    {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    },
+    {"packagist": false}
+  ],
+
+  "config" : {
+    "secure-http" : false
+  }
+}

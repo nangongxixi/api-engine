@@ -1,0 +1,20 @@
+build-composer:
+    script:
+#        - sh -x /usr/local/sbin/buildComposerRepos $(composer info -N)
+        - sh -x /usr/local/sbin/buildComposerRepos $(composer info -s | awk '$1=="name"{print $3}')
+    stage: build
+    tags:
+        - repos
+        - repo
+        - dev
+    only:
+        - master
+
+rsync-repo:
+    script:
+        - sh -x /usr/local/sbin/rsyncGitRepo.sh myali
+    stage: build
+    tags:
+        - dev
+    only:
+        - master
